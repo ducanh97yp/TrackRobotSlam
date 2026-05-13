@@ -1,0 +1,13 @@
+../Core/Src/main.c:78:6:motor_init_can_interface	1
+../Core/Src/main.c:87:6:motor_enter_operation_mode	1
+../Core/Src/main.c:112:6:motor_enter_speed_mode	1
+../Core/Src/main.c:144:6:motor_enable	1
+../Core/Src/main.c:177:6:motor_set_speed	2
+../Core/Src/main.c:225:6:start_motors	1
+../Core/Src/main.c:244:5:main	7
+../Core/Src/main.c:332:6:SystemClock_Config	4
+../Core/Src/main.c:392:13:MX_FDCAN1_Init	2
+../Core/Src/main.c:445:13:MX_TIM6_Init	3
+../Core/Src/main.c:483:13:MX_GPIO_Init	1
+../Core/Src/main.c:503:6:MPU_Config	1
+../Core/Src/main.c:534:6:Error_Handler	1

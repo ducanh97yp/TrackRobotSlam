@@ -1,0 +1,13 @@
+../Core/Src/main.c:78:6:motor_init_can_interface	8	static
+../Core/Src/main.c:87:6:motor_enter_operation_mode	56	static
+../Core/Src/main.c:112:6:motor_enter_speed_mode	64	static
+../Core/Src/main.c:144:6:motor_enable	64	static
+../Core/Src/main.c:177:6:motor_set_speed	72	static
+../Core/Src/main.c:225:6:start_motors	8	static
+../Core/Src/main.c:244:5:main	16	static
+../Core/Src/main.c:332:6:SystemClock_Config	120	static
+../Core/Src/main.c:392:13:MX_FDCAN1_Init	8	static
+../Core/Src/main.c:445:13:MX_TIM6_Init	24	static
+../Core/Src/main.c:483:13:MX_GPIO_Init	16	static
+../Core/Src/main.c:503:6:MPU_Config	24	static
+../Core/Src/main.c:534:6:Error_Handler	4	static,ignoring_inline_asm

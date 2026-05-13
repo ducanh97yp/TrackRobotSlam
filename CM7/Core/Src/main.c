@@ -58,6 +58,7 @@ FDCAN_HandleTypeDef hfdcan1;
 TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN PV */
+const uint32_t MOTOR_ID = 0x601;
 const uint32_t MOTOR_ID = 0x602;
 /* USER CODE END PV */
 

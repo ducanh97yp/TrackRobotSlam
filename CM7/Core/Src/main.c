@@ -58,8 +58,10 @@ FDCAN_HandleTypeDef hfdcan1;
 TIM_HandleTypeDef htim6;
 
 /* USER CODE BEGIN PV */
-const uint32_t MOTOR_ID = 0x601;
-const uint32_t MOTOR_ID = 0x602;
+const uint32_t LEFT_MOTOR_ID = 0x601;
+const uint32_t RIGHT_MOTOR_ID = 0x602;
+const uint32_t LEFT_READ_MOTOR_ID = 0x581;
+const uint32_t RIGHT_READ_MOTOR_ID = 0x582;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -225,13 +227,15 @@ void motor_set_speed(uint32_t motor_id, uint32_t speed, bool reversed)
   */
 void start_motors(void) {
 
-  motor_enter_operation_mode(MOTOR_ID);
+  motor_enter_operation_mode(1);
   HAL_Delay(100);
-  motor_enter_speed_mode(MOTOR_ID);
+  motor_enter_speed_mode(LEFT_MOTOR_ID);
   HAL_Delay(100);
-
-  motor_enable(MOTOR_ID);
+  motor_enter_speed_mode(RIGHT_MOTOR_ID);
   HAL_Delay(100);
+  motor_enable(LEFT_MOTOR_ID);
+  HAL_Delay(100);
+  motor_enable(RIGHT_MOTOR_ID);
 
 }
 
@@ -319,8 +323,10 @@ Error_Handler();
   while (1)
   {
     /* USER CODE END WHILE */
-	   motor_set_speed(MOTOR_ID, 200, false);
-	   HAL_Delay(3000);
+	   motor_set_speed(LEFT_MOTOR_ID, 200, false);
+	   HAL_Delay(300);
+     motor_set_speed(RIGHT_MOTOR_ID, 200, false);
+     HAL_Delay(300);
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */

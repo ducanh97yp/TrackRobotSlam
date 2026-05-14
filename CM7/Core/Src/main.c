@@ -83,7 +83,7 @@ void motor_init_can_interface(void) {
 }
 
 /**
-  * @brief  Set the motor to CAN OPERATION mode
+  * @brief  Set the motor to CAN OPERATION mode 
   * @param motor_id
   * @retval None
   */
@@ -91,7 +91,7 @@ void motor_enter_operation_mode(uint32_t motor_id) {
   //Driver enter operating mode-------------------------------
   uint8_t tx_data_op[2];
   tx_data_op[0] = 0x01;
-  tx_data_op[1] = motor_id > 0 ? motor_id : 0x00;
+  tx_data_op[1] = motor_id > 1 ? motor_id : 0x00; //First in operation mode cob ID 0000, data 01 XX (XX is the node of the drive, station number 1 is 01, and 00 is sent for all node operations
   FDCAN_TxHeaderTypeDef tx_operation;
 
   tx_operation.Identifier = 0x000000;
@@ -126,7 +126,7 @@ void motor_enter_speed_mode(uint32_t motor_id) {
   tx_transmitter.MessageMarker = 0;
 
   uint8_t tx_speed_mode_data[8];
-  //set driver to speed mode---------------------------------
+  //set driver to speed mode data 2F 60 60 00 03 00 00 00-----------------------
   tx_speed_mode_data[0] = 0x2F;
   tx_speed_mode_data[1] = 0x60;
   tx_speed_mode_data[2] = 0x60;
@@ -158,7 +158,7 @@ void motor_enable(uint32_t motor_id) {
   tx_transmitter.MessageMarker = 0;
 
   uint8_t tx_enable_data[8];
-  //driver enable----------------------------------------------
+  //driver enable 2B 40 60 00 0F 00 00 00---------------------------------
   tx_enable_data[0] = 0x2B;
   tx_enable_data[1] = 0x40;
   tx_enable_data[2] = 0x60;

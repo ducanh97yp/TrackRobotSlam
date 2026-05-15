@@ -115,7 +115,7 @@ void motor_enter_operation_mode(uint32_t motor_id) {
 void motor_enter_speed_mode(uint32_t motor_id) {
   FDCAN_TxHeaderTypeDef tx_transmitter;
 
-  tx_transmitter.Identifier = motor_id > 0 ? motor_id : 0x00;  //servo Id
+  tx_transmitter.Identifier = motor_id > 1 ? motor_id : 0x00;  //servo Id
   tx_transmitter.IdType = FDCAN_STANDARD_ID;
   tx_transmitter.TxFrameType = FDCAN_DATA_FRAME;
   tx_transmitter.DataLength = FDCAN_DLC_BYTES_8;
